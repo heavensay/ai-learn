@@ -1,0 +1,32 @@
+# Package Files #
+*.jar
+*.war
+*.ear
+*.zip
+*.tar.gz
+
+#eclipse
+.settings/
+.project
+.classpath
+
+# IntelliJ IDEA Files 
+*.iml
+*.ipr 
+*.iws 
+*.idea
+
+
+# Build Artifacts 
+.gradle/
+build/
+target/
+bin/
+!.mvn/wrapper/*
+.flattened-pom.xml
+dependency-reduced-pom.xml
+
+# system ignore
+.DS_Store
+Thumbs.db
+*.orig
