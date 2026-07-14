@@ -1,0 +1,54 @@
+{
+  "skill_name": "file-operator",
+  "version": "1.0",
+  "evals": [
+    {
+      "id": "read-readme",
+      "prompt": "读取 111.md 文件内容",
+      "expected_output": "返回 111.md 的真实内容。",
+      "files": [
+        "evals/files/111.md"
+      ],
+      "assertions": [
+        "file-operator Skill 被触发",
+        "执行 FileOperator read 111.md",
+        "最终回答包含 111.md 的完整内容",
+        "回答内容来源于文件，而不是模型推测"
+      ]
+    },
+    {
+      "id": "read-non-exists",
+      "prompt": "读取 abc.txt",
+      "expected_output": "报告文件不存在。",
+      "assertions": [
+        "file-operator Skill 被触发",
+        "执行 FileOperator read abc.txt",
+        "返回读取失败",
+        "没有虚构 abc.txt 内容"
+      ]
+    },
+    {
+      "id": "analyze-java",
+      "prompt": "分析 src/Test.java 做了什么",
+      "files": [
+        "evals/files/Test.java"
+      ],
+      "expected_output": "先读取源码，再进行分析。",
+      "assertions": [
+        "file-operator Skill 被触发",
+        "执行 FileOperator read src/Test.java",
+        "分析基于源码",
+        "没有跳过读取直接分析"
+      ]
+    },
+    {
+      "id": "negative-java-question",
+      "prompt": "Java 有哪些基本数据类型？",
+      "expected_output": "直接回答 Java 问题。",
+      "assertions": [
+        "file-operator Skill 不应触发",
+        "不执行 FileOperator"
+      ]
+    }
+  ]
+}
