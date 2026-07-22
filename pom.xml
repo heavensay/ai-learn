@@ -12,6 +12,7 @@
   <modules>
     <module>ai-mcp</module>
     <module>ai-agent-skills</module>
+      <module>ai-plugins</module>
   </modules>
 
   <properties>

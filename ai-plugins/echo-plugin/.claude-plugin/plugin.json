@@ -1,0 +1,5 @@
+{
+  "name": "echo-plugin",
+  "version": "1.0.0",
+  "description": "Echo plugin with hooks, agent, command and skill"
+}
